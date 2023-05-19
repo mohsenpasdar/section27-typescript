@@ -3,14 +3,10 @@ import classes from "./TodoItem.module.css";
 
 const TodoItem: React.FC<{
   text: string;
-  id: string;
-  onRemoveTodo: (id: string) => void;
+  onRemoveTodo: () => void;
 }> = (props) => {
-  const removeHandler = () => {
-    props.onRemoveTodo(props.id)
-  }
   return (
-    <li className={classes.item} onClick={removeHandler}>
+    <li className={classes.item} onClick={props.onRemoveTodo}>
       {props.text}
     </li>
   );

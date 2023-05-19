@@ -13,8 +13,7 @@ const Todos: React.FC<{
         <TodoItem
           key={item.id}
           text={item.text}
-          id={item.id}
-          onRemoveTodo={props.onRemoveTodo}
+          onRemoveTodo={props.onRemoveTodo.bind(null, item.id)}
         />
       ))}
     </ul>
